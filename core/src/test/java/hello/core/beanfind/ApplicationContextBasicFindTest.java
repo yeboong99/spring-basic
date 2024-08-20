@@ -42,7 +42,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 없는 빈 조회해보기(X)")
     void findBeanByNameX() {
 //        MemberService xxxxx = ac.getBean("xxxxx", MemberService.class);
-        org.junit.jupiter.api.Assertions.assertThrows(NoSuchBeanDefinitionException.class,
+        org.junit.jupiter.api.Assertions.assertThrows(NoSuchBeanDefinitionException.class,  // 람다식을 실행했을 때 assertThrows의 파라미터로 전달한 예외가 터져야 테스트 성공
                 () -> ac.getBean("xxxxx", MemberService.class));
     }
 
