@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class StatelessServiceTest {
     @Test
-    void statefulServiceSingleton() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(StatefulServiceTest.TestConfig.class);
+    void statelessServiceSingleton() {
+        ApplicationContext ac = new AnnotationConfigApplicationContext(StatelessServiceTest.TestConfig.class);
         StatelessService statelessService1 = ac.getBean(StatelessService.class);
         StatelessService statelessService2 = ac.getBean(StatelessService.class);
 
@@ -34,7 +34,7 @@ class StatelessServiceTest {
     static class TestConfig {
 
         @Bean
-        public StatelessService statefulService() {
+        public StatelessService statelessService() {
             return new StatelessService();
         }
     }
