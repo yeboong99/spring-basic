@@ -17,4 +17,11 @@ public class MemberServiceImpl implements MemberService{
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+    // AppConfig의 싱글톤 테스트 용도. test/singleton/ConfigurationSingletonTest
+    // (과연 memberService에서 생성되는 memberRepository객체와
+    //      orderService에서 생성되는 memberRepository 객체가 싱글톤, 즉 메모리 주소값이 같을까?)
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 }

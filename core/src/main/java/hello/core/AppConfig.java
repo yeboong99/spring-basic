@@ -22,16 +22,19 @@ public class AppConfig {
 
     @Bean   // Key로 memberService, Value로 MemberServiceImpl객체로 등록됨.
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean   // Key로 memberRepository, Value로 MemoryMemberRepository객체가 등록됨.
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean   // Key로 orderService, Value로 OrderServiceImpl 객체가 등록됨.
     public OrderService orderService() {
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
