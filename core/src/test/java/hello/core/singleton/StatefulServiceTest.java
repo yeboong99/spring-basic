@@ -25,7 +25,7 @@ class StatefulServiceTest {
 
 
         // Thread A : 고객 A의 주문 금액을 조회함.
-        int price = statefulService2.getPrice();
+        int price = statefulService1.getPrice();
 
         System.out.println("price = " + price);
 

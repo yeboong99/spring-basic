@@ -1,9 +1,18 @@
 package hello.core.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;
 
+    // 생성자에 @Autowired 추가
+    // 생성자에 @Autowired를 지정하면, 스프링 컨테이너가 자동으로 해당 스프링 빈을 찾아서 주입한다.
+    // 이 때 기본 조회 전략은 타입이 같은 빈을 찾아서 주입한다.
+        // getBean(MemberRepository.class)와 동일하다고 이해하면 된다.
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
